@@ -1,0 +1,90 @@
+<ion-header style="background-color: rgb(30, 30, 30)">
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        {{ 'Ingreso.Button.Theme' | translate }}
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+  <div class="ion-text-center hide-in-landscape">
+
+    <img class="centered-image" height="45px" src="assets/img/logo-duoc.svg" alt="" />
+  </div>
+
+
+  <ion-toolbar>
+    <ion-title #titulo class="ion-text-center ion-text font-size-18 glow-text">
+      <h4 style="padding-top: 10px">
+        <b> {{ 'AppName' | translate }} </b>
+      </h4>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+  <ion-card class="ion-text-center">
+
+    <img src="assets/img/asistencia.webp" height="150px" alt="" />
+    <ion-card-content>
+      <ion-card-header class="show-in-portrait">
+        <ion-card-title color="light" class="glow-text">
+          <h4>
+            <b> {{ 'Ingreso.Title.Login' | translate }} </b>
+          </h4>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-item class="margin-bottom-6 float-left-landscape">
+        <ion-input #cuentaInput label="{{ 'Ingreso.Label.Email' | translate }}" labelPlacement="floating"
+          [(ngModel)]="cuenta" placeholder="{{ 'Ingreso.Placeholder.Email' | translate }}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="margin-bottom-6 float-right-landscape">
+        <ion-input #passwordInput label="{{ 'Ingreso.Label.Password' | translate }}" labelPlacement="floating"
+          [(ngModel)]="password" placeholder="{{ 'Ingreso.Placeholder.Password' | translate }}" type="password">
+        </ion-input>
+      </ion-item>
+      <div class="ion-text-center margin-top-6" style="clear: both">
+        <ion-button class="enter-button normal-text" shape="round" (click)="login()">
+          {{ 'Ingreso.Button.Login' | translate }}
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-footer>
+    <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          ">
+      <ion-button color="secondary" shape="block" style="width: 450px" (click)="passwordRecovery()">
+        {{ 'Ingreso.Button.ForgotPassword' | translate }}
+      </ion-button>
+    </div>
+    <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          ">
+      <ion-button color="light" shape="block" style="width: 450px" (click)="navigateRegistro()">
+        {{ 'Ingreso.Button.Signin' | translate }}
+      </ion-button>
+    </div>
+    <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          ">
+      <ion-button color="tertiary" shape="block" style="width: 450px" (click)="navigateMiRuta()">
+        {{ 'Ingreso.Button.MiRuta' | translate }}
+      </ion-button>
+    </div>
+  </ion-footer>
+</ion-content>

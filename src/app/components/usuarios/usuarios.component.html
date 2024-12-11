@@ -1,0 +1,28 @@
+<a #topOfPage href="#topOfPage"></a>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      {{'UsuariosPage.Title'|translate}}
+    </ion-card-title>
+  </ion-card-header>
+
+
+
+</ion-card>
+
+<ion-card *ngFor="let usu of users">
+  <ion-card-header>
+
+    <h3>{{ usu.firstName + ' '+usu.lastName }}</h3>
+    <div class="user-container">
+
+      <h4>{{ usu.email }}</h4>
+
+      <ion-button *ngIf="usu.email !== 'admin@duocuc.cl'" color="danger" fill="clear" (click)="deleteUser(usu)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+  </ion-card-header>
+
+</ion-card>

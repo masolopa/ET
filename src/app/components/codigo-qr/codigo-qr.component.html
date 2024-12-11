@@ -1,0 +1,36 @@
+<ion-title class="ion-padding-top">
+  <ion-label>
+    <h1 #saludo class="ion-text-center">
+      {{'QR.Label.Welcome'|translate}}
+    </h1>
+    <h1 #nombre class="ion-text-center">
+      {{usuario.firstName}} {{usuario.lastName}}
+    </h1>
+  </ion-label>
+</ion-title>
+<ion-title>
+  <ion-label class="ion-text-center">
+    <h1 >
+      {{'QR.Label.Escanear1'|translate}} <br>
+      {{'QR.Label.Escanear2'|translate}}
+
+    </h1>
+  </ion-label>
+</ion-title>
+
+<div *ngIf="plataforma=='web'">
+  <video #video style="border: solid white 3px; border-radius: 25px;" height="200px" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+</div>
+
+
+
+<ion-button expand="full" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" shape="round">
+  <ion-icon slot="start" name="videocam-outline"></ion-icon>
+  {{'QR.Button.Scan'|translate}}
+</ion-button>
+
+<ion-button *ngIf="escaneando && plataforma==='web'" (click)="detenerEscaneoQR()" expand="full" shape="round">
+  <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+  {{'QR.Button.Stop'|translate}}
+</ion-button>

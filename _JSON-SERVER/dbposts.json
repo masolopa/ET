@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "email": "atorres@duocuc.cl",
+      "nombre": "Ana",
+      "apellido": "Torres",
+      "title": "Apoyo Académico en el Instituto Duoc",
+      "body": "El Instituto Duoc brinda apoyo académico a sus estudiantes para garantizar su éxito en sus estudios. Tutores y recursos están disponibles para ayudarte en tu camino."
+    },
+    {
+      "id": "2",
+      "email": "atorres@duocuc.cl",
+      "nombre": "Ana",
+      "apellido": "Torres",
+      "title": "Aprendizaje en Línea en el Instituto Duoc",
+      "body": "El Instituto Duoc ofrece opciones de aprendizaje en línea para aquellos que desean flexibilidad en sus estudios. Aprovecha la tecnología para tu formación académica."
+    },
+    {
+      "id": "3",
+      "email": "jperez@duocuc.cl",
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "title": "Instituto Duoc: compromiso con la Comunidad",
+      "body": "El Instituto Duoc está comprometido con la comunidad y realiza actividades de servicio social para contribuir al bienestar de la sociedad."
+    },
+    {
+      "id": "4",
+      "email": "atorres@duocuc.cl",
+      "nombre": "Ana",
+      "apellido": "Torres",
+      "title": "kjashd",
+      "body": "holaghghghghghghgh"
+    }
+  ]
+}

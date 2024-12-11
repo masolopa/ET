@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <!-- El div con id "mapId" será donde se mostrará el mapa -->
+  <div id="mapId" style="height: 100%"></div>
+</ion-content>
+
+<app-footer></app-footer>
+
+<ion-footer>
+  <ion-toolbar class="ion-text-center" color="primary">
+    <ion-button
+      shape="round"
+      color="secondary"
+      size="small"
+      (click)="goToDUOC()"
+    >
+      
+    {{ 'ThemePage.Color.Duoc' | translate }}
+    </ion-button>
+
+    <ion-button
+      shape="round"
+      color="secondary"
+      size="small"
+      (click)="goToMyPosition()"
+    >
+    {{ 'MiRuta.Button.Aqui' | translate }}
+    </ion-button>
+
+    <ion-button
+      shape="round"
+      color="secondary"
+      size="small"
+      (click)="showRouteToDuoc()"
+    >
+    {{ 'MiRuta.Button.Route' | translate }}
+    </ion-button>
+
+    <div *ngIf="distance">
+      <br />
+      {{ distance }}
+    </div>
+  </ion-toolbar>
+</ion-footer>

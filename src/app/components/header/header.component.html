@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="isHomePage(); else otherPages">
+      <ion-toolbar color="grey">
+        <div class="navbar-content">
+          <!-- Logo en la parte izquierda -->
+          <div class="navbar-logo">
+            <img src="../../assets/img/logo-duoc.svg" style="height: 40px;" alt="">
+          </div>
+          <!-- Título en la parte derecha -->
+          <div class="navbar-title">
+            <ion-title #titulo style="font-size: 15px;">
+              <div>{{'AppName'|translate}}</div>
+            </ion-title>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-title>
+    <ng-template #otherPages>
+      <ng-container *ngIf="isRutaPage(); else registerPage">
+        <!-- Encabezado para la página "ruta" -->
+        <ion-header style="background-color: rgb(30, 30, 30)">
+          <div class="navbar-logo">
+            <img src="../../assets/img/logo-duoc.svg" style="height: 100px;" alt="">
+          </div>
+          <ion-toolbar>
+            <ion-title #titulo class="ion-text-center ion-text font-size-18 glow-text">
+              <h4 style="padding-top: 20px">
+                <b>{{ 'MiRuta.Label.Late' | translate }}</b>
+              </h4>
+            </ion-title>
+          </ion-toolbar>
+        </ion-header>
+      </ng-container>
+      <ng-template #registerPage>
+        <ion-toolbar color="grey">
+          <div class="navbar-content">
+            <!-- Logo en la parte izquierda -->
+            <div class="navbar-logo">
+              <img src="../../assets/img/logo-duoc.svg" style="height: 40px;" alt="">
+            </div>
+            <!-- Título en la parte derecha -->
+            <div class="navbar-title">
+              <ion-title #titulo style="font-size: 15px;">
+                <div>{{'AppName'|translate}}</div>
+              </ion-title>
+            </div>
+          </div>
+        </ion-toolbar>
+
+      </ng-template>
+    </ng-template>
+    <div slot="end" style="margin-right: 0px">
+      <ion-button *ngIf="isHomePage(); else backButton" size="large" icon-only (click)="logout()">
+        <ion-icon name="log-out-outline" color="light"></ion-icon>
+      </ion-button>
+      <ng-template #backButton>
+        <ion-button size="small" style="width: 50px" (click)="navigateAtras()" icon-only>
+          <ion-icon name="arrow-back" color="light"></ion-icon>
+        </ion-button>
+      </ng-template>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="isHomePage();" id="secundario">
+    <ion-segment [(ngModel)]="segmentValue" class="button-container"
+      (ionChange)="seleccionarComponente($event.detail.value)">
+      <ion-segment-button *ngIf="!isAdmin" value="qr">
+        QR
+      </ion-segment-button>
+      <ion-segment-button value="foro">
+        {{'Foro'|translate}}
+      </ion-segment-button>
+      <ion-segment-button *ngIf="!isAdmin" value="mi-clase">
+        {{'MiClase'|translate}}
+      </ion-segment-button>
+      <ion-segment-button value="mis-datos">
+        {{'MisDatos'|translate}}
+      </ion-segment-button>
+      <ion-segment-button *ngIf="isAdmin" value="usuarios">
+        {{'Usuarios'|translate}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>

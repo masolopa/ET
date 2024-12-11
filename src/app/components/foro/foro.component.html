@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <a #topOfPage href="#topOfPage"></a>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        {{'Foro.Label.Title'|translate}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-item class="ion-padding-horizontal">
+      <ion-input [(ngModel)]="publicacion.title" label="{{'Foro.Label.Titulo'|translate}}" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-padding-horizontal">
+      <ion-textarea [(ngModel)]="publicacion.body" label="{{'Foro.Label.Contenido'|translate}}" labelPlacenent="floating"></ion-textarea>
+    </ion-item>
+
+
+    <div class="alinear-centro">
+      <ion-button (click)="limpiar()">{{'Foro.Button.Limpiar'|translate}}</ion-button>
+      <ion-button (click)="crearPublicacion()">{{'Foro.Button.Guardar'|translate}}</ion-button>
+    </div>
+  </ion-card>
+  <ion-card class="sin-bordes">
+    <ion-card-title class="con-padding-top">{{'Foro.Title.Publicaciones'|translate}}</ion-card-title>
+  </ion-card>
+  <ion-card *ngFor="let pub of publicaciones">
+    <ion-card-header>
+      <h4>
+        ({{'Foro.Label.Publicacion'|translate}}#{{pub.id}}) {{pub.nombre}} {{pub.apellido}} <br>
+      </h4>
+      <ion-item>
+        <ion-input [(ngModel)]="pub.title" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <textarea [(ngModel)]="pub.body" rows="4" cols="50"></textarea>
+
+      </ion-item>
+
+
+    </ion-card-header>
+    <div class="alinear-derecha">
+      <ion-button (click)="editarPublicacion(pub)">
+        <ion-icon slot="icon-only" name="pencil-outline">
+
+        </ion-icon>
+      </ion-button>
+      <ion-button (click)="eliminarPublicacion(pub)">
+        <ion-icon slot="icon-only" name="trash-outline">
+
+        </ion-icon>
+      </ion-button>
+    </div>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-content fullscreen="true">
+  <div class="center-container" style="
+    background-size: cover; 
+    background-position: center;">
+
+    <ion-card class="ion-text-center" style="margin: 10px;">
+
+      <ion-header style="background-color: rgb(30, 30, 30);">
+        <img class="foto-portada" style="padding: 10px; width: 150px;" src="assets/img/logo-duoc.svg" alt="Logo Duoc">
+        <ion-toolbar>
+          <ion-title class="ion-text-center ion-text font-size-16 ">{{'AppName'|translate}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-card-content>
+        <h2 style="font-size: large; margin: 5px 0;">{{'IncorrectoPage.Label.Mensaje'|translate}}</h2>
+        <img class="foto-correcto" style="padding: 10px; width: 100%; margin: 0 auto;" src="/assets/img/incorrecto.webp" alt="incorrecto">
+        <br>
+          <a cursor="pointer" (click)="navigateLogin()">{{'CorreoPage.Link.Login'|translate}}</a>
+        <br>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="center-container" style="
+    background-image: url('assets/img/pao.jpg'); background-size: cover; background-position: center; ">
+ 
+
+      <ion-card class="ion-text-center">
+
+        <ion-header style="background-color: rgb(30, 30, 30);">
+          <img class="foto-portada" style="padding: 20px;" src="assets/img/logo-duoc.svg" alt="">
+          <ion-toolbar>
+            <ion-title #titulo class="ion-text-left ion-text font-size-18">
+              <div>{{'AppName'|translate}}</div>
+            </ion-title>
+          </ion-toolbar>
+        </ion-header>
+
+        <ion-card-content>
+
+          <ion-card-header>
+            <ion-toolbar>
+              <br>
+              <h2 style="font-size: x-large; margin-top: 0;">{{'CorreoPage.Label.Recover'|translate}}</h2>
+            </ion-toolbar>
+            <ion-title>
+              <ion-label style="font-size: large;">
+                {{'PreguntaPage.Label.Pregunta'|translate}}
+              </ion-label>
+            </ion-title>
+          </ion-card-header>
+          <ion-label style="font-size: large; color:white;">
+            {{usuario.firstName}} {{usuario.lastName}}
+          </ion-label>
+          <br>
+          <br>
+          <ion-label style="font-size: large; color:white;">
+            {{usuario.secretQuestion}}
+          </ion-label>
+
+          <ion-item>
+
+            <ion-input [(ngModel)]="respuesta" label="{{'PreguntaPage.Label.Placeholder'|translate}}" labelPlacement="floating"
+              type="text"></ion-input>
+          </ion-item>
+
+          <ion-button style="margin-top: 25px;" shape="block" size="medium" (click)="vPregunta()">{{'CorreoPage.Label.Recover'|translate}}</ion-button>
+          <br>
+          <a cursor="pointer" (click)="navigateLogin()">{{'CorreoPage.Link.Login'|translate}}</a>
+          <br>
+        </ion-card-content>
+
+
+
+      </ion-card>
+
+ 
+  </div>
+
+</ion-content>

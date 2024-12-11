@@ -1,0 +1,111 @@
+<app-header></app-header>
+<div #afuera class="center-container ion-padding-vertical" style="
+background-image: url('assets/img/pao.jpg');
+background-size: cover;
+background-position: center;
+">
+
+  <ion-card class="ion-text-center">
+    <ion-card-content style="padding: 5px">
+      <ion-card-header>
+        <ion-toolbar>
+          <h2 style="font-size: large; margin-top: 0;
+           
+          font-weight: bold; 
+          color: #ffffff; 
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+          font-family: 'Arial Black', sans-serif;">
+            {{'RegistroPage.Title.Registro'|translate}}
+          </h2>
+        </ion-toolbar>
+        <ion-title>
+          <ion-label style="font-size: medium; margin-left: 0px">
+            {{'RegistroPage.Title.Campos'|translate}}
+          </ion-label>
+        </ion-title>
+      </ion-card-header>
+
+      <ion-item #itemCuenta>
+        <ion-input [(ngModel)]="usuario.userName" label="{{'MisDatos.Label.Cuenta'|translate}}"
+          labelPlacement="floating" style="font-size: 14px"></ion-input>
+      </ion-item>
+
+      <ion-item #itemNombre>
+        <ion-input [(ngModel)]="usuario.firstName" label="{{'MisDatos.Label.Nombre'|translate}}"
+          labelPlacement="floating" style="font-size: 14px"></ion-input>
+      </ion-item>
+
+      <ion-item #itemApellido>
+        <ion-input [(ngModel)]="usuario.lastName" label="{{'MisDatos.Label.Apellido'|translate}}"
+          labelPlacement="floating" style="font-size: 14px"></ion-input>
+      </ion-item>
+
+      <ion-item #itemCorreo>
+        <ion-input [(ngModel)]="usuario.email" label="{{'MisDatos.Label.Correo'|translate}}" labelPlacement="floating"
+          style="font-size: 14px"></ion-input>
+      </ion-item>
+      <ion-item #itemDireccion>
+        <ion-input [(ngModel)]="usuario.address" label="{{'MisDatos.Label.Direccion'|translate}}"
+          labelPlacement="floating" style="font-size: 14px"></ion-input>
+      </ion-item>
+
+      <ion-item #itemEducacion>
+        <ion-select label="{{'MisDatos.Label.Educacion'|translate}}" labelPlacement="floating" #MySelect
+          [(ngModel)]="usuario.educationalLevel!.id" placeholder="Seleccione Nivel">
+
+          <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
+            {{nivel.name}}
+          </ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-item #itemPreguntaSecreta>
+        <ion-input label="{{'MisDatos.Label.Pregunta'|translate}}" labelPlacement="floating" type="text"
+          [(ngModel)]="usuario.secretQuestion" placeholder="Ingresa tu pregunta secreta"></ion-input>
+      </ion-item>
+
+      <ion-item #itemRespuestaSecreta>
+        <ion-input label="{{'MisDatos.Label.Respuesta'|translate}}" labelPlacement="floating" type="text"
+          [(ngModel)]="usuario.secretAnswer" placeholder="Ingresa tu respuesta secreta"></ion-input>
+      </ion-item>
+
+      <table>
+        <tr>
+          <td class="font-size-12">{{'MisDatos.Label.Nacimiento'|translate}}</td>
+          <td class="cell-align-right">
+            <input matInput [matDatepicker]="fechaNacimiento" [(ngModel)]="usuario.dateOfBirth" placeholder="dd/mm/yyyy"
+              class="date-width" />
+          </td>
+          <td class="cell-width-0">
+            <mat-datepicker-toggle matSuffix [for]="fechaNacimiento"></mat-datepicker-toggle>
+            <mat-datepicker #fechaNacimiento></mat-datepicker>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <ion-item #itemContrasena>
+        <ion-input label="{{'MisDatos.Label.Contraseña'|translate}}" labelPlacement="floating" type="password"
+          [(ngModel)]="usuario.password" placeholder="Ingresa tu contraseña"></ion-input>
+      </ion-item>
+
+      <ion-item #itemRepetirContrasena>
+        <ion-input label="{{'MisDatos.Label.ValPass'|translate}}" labelPlacement="floating" type="password"
+          [(ngModel)]="validarPass" placeholder="Repite tu contraseña"></ion-input>
+      </ion-item>
+
+      <div class="button-container" style="
+              display: flex;
+              justify-content: space-between;
+              margin-top: 10px;
+            ">
+        <ion-button expand="block" (click)="limpiar1()">{{'Foro.Button.Limpiar'|translate}}</ion-button>
+        <ion-button expand="block" color="primary"
+          (click)="actualizarDatos()">{{'Ingreso.Button.Signin'|translate}}</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</div>

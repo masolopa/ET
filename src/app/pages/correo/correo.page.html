@@ -1,0 +1,51 @@
+<ion-content fullscreen="true">
+  <div class="center-container ion-padding-vertical" style="
+    background-image: url('assets/img/pao.jpg'); background-size: cover; background-position: center; ">
+
+
+    <ion-card class="ion-text-center">
+
+      <ion-header style="background-color: rgb(30, 30, 30);">
+        <img class="foto-portada" style="padding: 20px;" src="assets/img/logo-duoc.svg" alt="">
+        <ion-toolbar>
+          <ion-title #titulo class="ion-text-left ion-text font-size-18">
+            <div>{{'AppName'|translate}}</div>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-card-content>
+
+        <ion-card-header>
+          <ion-toolbar>
+            <br>
+            <h2 style="font-size: x-large; margin-top: 0;">{{'CorreoPage.Label.Recover'|translate}}</h2>
+          </ion-toolbar>
+          <ion-title>
+            <ion-label style="font-size: large;">
+              {{'CorreoPage.Label.Email'|translate}}
+            </ion-label>
+          </ion-title>
+        </ion-card-header>
+        <br>
+        <br>
+        <ion-item>
+
+          <ion-input [(ngModel)]="correo" label="{{'CorreoPage.Label.Placeholder'|translate}}" labelPlacement="floating"
+            type="email"></ion-input>
+        </ion-item>
+
+        <ion-button style="margin-top: 25px;" shape="block" size="medium"
+          (click)="vCorreo()">{{'CorreoPage.Button.Recover'|translate}}</ion-button>
+
+        <br>
+        <a cursor="pointer" (click)="navigateLogin()">{{'CorreoPage.Link.Login'|translate}}</a>
+        <br>
+
+      </ion-card-content>
+
+
+    </ion-card>
+
+  </div>
+</ion-content>

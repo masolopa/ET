@@ -1,0 +1,65 @@
+<div class="macro">
+  <ion-grid fixed>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center" style="font-size: x-large;">{{'MiClase.Title.Datos'|translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="table-container">
+          <table class="styled-table">
+            <!-- Fila de Sede -->
+            <tr>
+              <th>{{'MiClase.Label.Sede'|translate}}</th>
+              <td>{{asistencia.sede || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Sigla -->
+            <tr>
+              <th>{{'MiClase.Label.Sigla'|translate}}</th>
+              <td>{{asistencia.idAsignatura || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Sección -->
+            <tr>
+              <th>{{'MiClase.Label.Seccion'|translate}}</th>
+              <td>{{asistencia.seccion || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Nombre de la asignatura -->
+            <tr>
+              <th>{{'MiClase.Label.NombreAsignatura'|translate}}</th>
+              <td>{{asistencia.nombreAsignatura || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Nombre del profesor -->
+            <tr>
+              <th>{{'MiClase.Label.NombreProfe'|translate}}</th>
+              <td>{{asistencia.nombreProfesor || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Día -->
+            <tr>
+              <th>{{'MiClase.Label.Dia'|translate}}</th>
+              <td>{{asistencia.dia ||'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Bloque inicio -->
+            <tr>
+              <th>{{'MiClase.Label.BloqueInicio'|translate}}</th>
+              <td>{{asistencia.bloqueInicio > 0 ? asistencia.bloqueInicio : 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Bloque término -->
+            <tr>
+              <th>{{'MiClase.Label.BloqueTermino'|translate}}</th>
+              <td>{{asistencia.bloqueTermino > 0 ? asistencia.bloqueTermino : 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Hora de inicio -->
+            <tr>
+              <th>{{'MiClase.Label.HoraInicio'|translate}}</th>
+              <td>{{asistencia.horaInicio || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+            <!-- Fila de Hora de término -->
+            <tr>
+              <th>{{'MiClase.Label.HoraTermino'|translate}}</th>
+              <td>{{asistencia.horaFin || 'MiClase.Label.NoDisponible'|translate}}</td>
+            </tr>
+          </table>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</div>

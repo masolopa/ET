@@ -1,0 +1,23 @@
+<app-header (componenteSeleccionado)="currentComponent = $event"></app-header>
+
+<ion-content>
+
+
+  <!-- Mostrar componentes según el valor de currentComponent -->
+  <div *ngIf="currentComponent === 'qr'">
+    <app-codigo-qr (cambiarComponenteHeader)="actualizarHeader($event)"></app-codigo-qr>
+  </div>
+  <div *ngIf="currentComponent === 'foro'">
+    <app-foro></app-foro>
+  </div>
+  <div *ngIf="currentComponent === 'mi-clase'">
+    <app-mi-clase></app-mi-clase>
+  </div>
+  <div *ngIf="currentComponent === 'mis-datos'">
+    <app-mis-datos></app-mis-datos>
+  </div>
+  <div *ngIf="currentComponent === 'usuarios'">
+    <app-usuarios></app-usuarios>
+  </div>
+
+</ion-content>
